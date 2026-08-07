@@ -29,6 +29,7 @@ window.DCGEngine = class DCGEngine {
     this.addButton('Start over', 'Erase the saved path and begin again.', () => this.restart(), 'secondary');
     this.progressEl.textContent = 'Adventure paused';
     this.pauseBtn.hidden = true;
+    this.shareBtn.hidden = false;
   }
   renderNode(id) {
     const node = this.adventure.nodes[id];
@@ -43,7 +44,7 @@ window.DCGEngine = class DCGEngine {
     const decisions = this.state.history.length;
     this.progressEl.textContent = id === (this.adventure.startNode || 'start') ? '' : `Decision ${decisions}`;
     this.pauseBtn.hidden = decisions === 0 || Boolean(node.ending);
-    this.shareBtn.hidden = false;
+    this.shareBtn.hidden = decisions === 0;
     this.panelEl.classList.remove('story-enter');
     void this.panelEl.offsetWidth;
     this.panelEl.classList.add('story-enter');
@@ -74,6 +75,7 @@ window.DCGEngine = class DCGEngine {
     this.addButton('Resume now', 'Continue from the decision you paused on.', () => this.renderNode(this.state.nodeId));
     this.progressEl.textContent = 'Paused';
     this.pauseBtn.hidden = true;
+    this.shareBtn.hidden = false;
   }
   async share() {
     const result = await window.DCGShare.share(this.adventure);
