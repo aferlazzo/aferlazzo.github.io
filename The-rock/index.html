@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Rock — DCG Prototype</title>
+  <meta name="description" content="An interactive Driver Confidence Guide adventure prototype.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage" id="app" aria-live="polite">
+    <section class="story" id="story-panel">
+      <div class="eyebrow" id="eyebrow">Driver Confidence Guide</div>
+      <div id="story"></div>
+      <div class="choices" id="choices"></div>
+      <div class="progress" id="progress" aria-label="Adventure progress"></div>
+    </section>
+  </main>
+
+  <noscript>This adventure needs JavaScript enabled.</noscript>
+  <script src="app.js"></script>
+</body>
+</html>
