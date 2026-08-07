@@ -3,21 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Rock — DCG Prototype</title>
-  <meta name="description" content="An interactive Driver Confidence Guide adventure prototype.">
+  <title>The Rock — A DCG Adventure</title>
+  <meta name="description" content="A Driver Confidence Guide interactive adventure by Anthony Ferlazzo.">
+  <meta name="author" content="Anthony Ferlazzo">
+  <meta property="og:title" content="The Rock — A DCG Adventure">
+  <meta property="og:description" content="You were just going to buy groceries. What would you do?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aferlazzo.github.io/The-rock/">
+  <link rel="canonical" href="https://aferlazzo.github.io/The-rock/">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="stage" id="app" aria-live="polite">
     <section class="story" id="story-panel">
-      <div class="eyebrow" id="eyebrow">Driver Confidence Guide</div>
+      <div class="topbar">
+        <div class="eyebrow" id="eyebrow">A DCG Adventure</div>
+        <div class="tools" aria-label="Adventure controls">
+          <button class="tool-button" id="pause-btn" type="button" hidden>Pause</button>
+          <button class="tool-button" id="share-btn" type="button" hidden>Share</button>
+        </div>
+      </div>
       <div id="story"></div>
       <div class="choices" id="choices"></div>
       <div class="progress" id="progress" aria-label="Adventure progress"></div>
+      <footer class="attribution" id="attribution"></footer>
     </section>
   </main>
-
   <noscript>This adventure needs JavaScript enabled.</noscript>
+  <script src="app/storage.js"></script>
+  <script src="app/analytics.js"></script>
+  <script src="app/share.js"></script>
+  <script src="app/engine.js"></script>
+  <script src="adventures/the-rock.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
